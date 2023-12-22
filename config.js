@@ -1,7 +1,7 @@
 // setting your list menu on here
 const menu = {
-   main: ["start", "menu", "ping", "owner"],
-   tools: ["ai", "aiimg", "ssweb", "ssphone", "sstab", "sspdf"],
+   main: ["start", "zetcoder", "ping", "owner"],
+   tools: ["gpt", "aiimg", "ssweb", "ssphone", "sstab", "sspdf"],
    sticker: ["sticker", "toimage"]
 }
 
@@ -34,7 +34,7 @@ export default {
    // Set Prefix, Session Name, Database Name and other options here
    options: {
       public: true,
-      antiCall: true, // reject call
+      antiCall: false, // reject call
       database: "database.json", // End .json when using JSON database or use Mongo URI
       owner: ["6282116568127"], // set owner number on here
       sessionName: "reyzee", // for name session
@@ -46,7 +46,7 @@ export default {
    Exif: {
       packId: "https://zetcoder.my.id",
       packName: `Zetcoder`,
-      packPublish: "__Reyzee",
+      packPublish: "Cly",
       packEmail: "rehanaf2870@gmail.com",
       packWebsite: "https://zetcoder.my.id",
       androidApp: "https://play.google.com/store/apps/details?id=com.bitsmedia.android.muslimpro",
