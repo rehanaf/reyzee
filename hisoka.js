@@ -246,30 +246,30 @@ async function start() {
    })
 
    // group participants update
-   hisoka.ev.on("group-participants.update", async (message) => {
-      await (await import(`./event/group-participants.js?v=${Date.now()}`)).default(hisoka, message)
-   })
+   // hisoka.ev.on("group-participants.update", async (message) => {
+   //    await (await import(`./event/group-participants.js?v=${Date.now()}`)).default(hisoka, message)
+   // })
 
    // group update
-   hisoka.ev.on("groups.update", async (update) => {
-      await (await import(`./event/group-update.js?v=${Date.now()}`)).default(hisoka, update)
-   })
+   // hisoka.ev.on("groups.update", async (update) => {
+   //    await (await import(`./event/group-update.js?v=${Date.now()}`)).default(hisoka, update)
+   // })
 
    // auto reject call when user call
-   hisoka.ev.on("call", async (json) => {
-      if (config.options.antiCall) {
-         for (const id of json) {
-            if (id.status === "offer") {
-               let msg = await hisoka.sendMessage(id.from, {
-                  text: `Maaf untuk saat ini, Kami tidak dapat menerima panggilan, entah dalam group atau pribadi\n\nJika Membutuhkan bantuan ataupun request fitur silahkan chat owner :p`,
-                  mentions: [id.from],
-               })
-               hisoka.sendContact(id.from, config.options.owner, msg)
-               await hisoka.rejectCall(id.id, id.from)
-            }
-         }
-      }
-   })
+   // hisoka.ev.on("call", async (json) => {
+   //    if (config.options.antiCall) {
+   //       for (const id of json) {
+   //          if (id.status === "offer") {
+   //             let msg = await hisoka.sendMessage(id.from, {
+   //                text: `Maaf untuk saat ini, Kami tidak dapat menerima panggilan, entah dalam group atau pribadi\n\nJika Membutuhkan bantuan ataupun request fitur silahkan chat owner :p`,
+   //                mentions: [id.from],
+   //             })
+   //             hisoka.sendContact(id.from, config.options.owner, msg)
+   //             await hisoka.rejectCall(id.id, id.from)
+   //          }
+   //       }
+   //    }
+   // })
 
    // rewrite database every 30 seconds
    setInterval(async () => {
